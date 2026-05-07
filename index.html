@@ -19,16 +19,22 @@
       text-align: center;
     }
 
-    /*headshot 1*/
-.headshot-container {
-  width: 100%;
+    /* Combined headshot row */
+.headshot-row {
   max-width: 900px;
   margin: 20px auto 0 auto;
-  text-align: right;
+  display: flex;
+  justify-content: space-between; /* puts one on left, one on right */
+  align-items: flex-start;        /* aligns them at the top */
+}
+
+/* Shared styling for both images */
+.headshot-box {
+  text-align: center;
 }
 
 .headshot-img {
-  width: 300px;   /* adjust smaller/larger here */
+  width: 150px;   /* adjust size here */
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
@@ -36,17 +42,10 @@
 
 .headshot-caption {
   font-size: 0.85rem;
-  color: #ddd;
+  color: #555;
   margin-top: 6px;
 }
 
-    /*headshot 2*/
-    .headshot-container2 {
-  width: 100%;
-  max-width: 900px;
-  margin: 20px auto 0 auto;
-  text-align: left;
-}
 
     
 
