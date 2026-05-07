@@ -19,22 +19,32 @@
       text-align: center;
     }
 
-    /* Combined headshot row */
-.headshot-row {
-  max-width: 700px;
-  margin: 20px auto 0 auto;
-  display: flex;
-  justify-content: space-between; /* puts one on left, one on right */
-  align-items: flex-start;        /* aligns them at the top */
+    /* 3‑column layout with stacked center images */
+.headshot-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* left | center | right */
+  gap: 20px;
+  max-width: 1100px;
+  margin: 20px auto;
+  align-items: start;
 }
 
-/* Shared styling for both images */
-.headshot-box {
-  text-align: center;
+/* Left, center, right columns */
+.left-col,
+.center-col,
+.right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Center column stacks vertically */
+.center-col {
+  gap: 20px;
 }
 
 .headshot-img {
-  width: 250px;   /* adjust size here */
+  width: 250px; /* adjust size */
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
@@ -44,6 +54,7 @@
   font-size: 0.85rem;
   color: #555;
   margin-top: 6px;
+  text-align: center;
 }
 
 
@@ -100,29 +111,36 @@
 
 </header>
 
-  <div class="headshot-row">
-    
-  <div class="headshot-container">
-    <img src="IMG_9710.JPG" alt="Caden Miller" class="headshot-img">
-    <p class="headshot-caption">Ohio University - Class of 2026</p>
-</div>
+  <div class="headshot-layout">
 
-  <div class="headshot-container2">
-    <img src="IMG_0313.jpg" alt="Capstone" class="headshot-img">
-    <p class="headshot-caption">Capstone Project Presentation</p>
-</div>
-
-    <div class="headshot-container3">
-    <img src="IMG_9510.PNG" alt="Capstone" class="headshot-img">
+  <!-- LEFT COLUMN (Image 3) -->
+  <div class="left-col">
+    <img src="IMG_9510.PNG" class="headshot-img">
     <p class="headshot-caption">Ohio GIS Conference</p>
-</div>
-
-    <div class="headshot-container4">
-    <img src="IMG_2665.jpeg" alt="Capstone" class="headshot-img">
-    <p class="headshot-caption">ODOT Geotechnical Internship</p>
-</div>
   </div>
 
+  <!-- CENTER COLUMN (Image 1 on top of Image 2) -->
+  <div class="center-col">
+    <div>
+      <img src="IMG_9710.JPG" class="headshot-img">
+      <p class="headshot-caption">Ohio University - Class of 2026</p>
+    </div>
+
+    <div>
+      <img src="IMG_0313.jpg" class="headshot-img">
+      <p class="headshot-caption">Capstone Project Presentation</p>
+    </div>
+  </div>
+
+  <!-- RIGHT COLUMN (Image 4) -->
+  <div class="right-col">
+    <img src="IMG_2665.jpeg" class="headshot-img">
+    <p class="headshot-caption">ODOT Geotechnical Internship</p>
+  </div>
+
+  </div>
+
+  
 <div class="container">
 
   <h2>Resume and About Me</h2>
